@@ -9,6 +9,14 @@ struct Color
  float b;
 };
 
+Color getpixel(int x, int y)
+{
+  Color curc;
+  glReadPixels(x,y,1,1,GL_RGB,GL_FLOAT,&curc);
+  
+  return curc;
+}
+
 void display(int x, int y, Color newc)
 {
  glColor3f(newc.r, newc.g, newc.b);
